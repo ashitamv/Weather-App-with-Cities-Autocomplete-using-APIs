@@ -1,13 +1,22 @@
-export const geo_api_url = 'https://wft-geo-db.p.rapidapi.com/v1/geo/cities';
-export const geo_api_options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'b0bc19d762msh100b1e57a65e54ap1cb2fbjsn4690e13c12ff',
-		'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
-	}
-};
+// Provider credentials belong to the server. The browser only calls our API.
+async function request(path, signal) {
+  const response = await fetch(path, { signal });
+  let body;
+  try {
+    body = await response.json();
+  } catch {
+    throw new Error('The weather service returned an unreadable response. Please try again.');
+  }
+  if (!response.ok) {
+    throw new Error(body.error?.message || 'The weather service is unavailable. Please try again.');
+  }
+  return body;
+}
 
-export const weather_api_url = 'https://api.openweathermap.org/data/2.5';
-export const weather_api_key = '741763fee511de55af6726021855113c';
+export function searchCities(query, signal) {
+  return request(`/api/cities?${new URLSearchParams({ q: query })}`, signal);
+}
 
-
+export function fetchWeather(latitude, longitude, signal) {
+  return request(`/api/weather?${new URLSearchParams({ lat: latitude, lon: longitude })}`, signal);
+}
