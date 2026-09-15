@@ -1,4 +1,20 @@
-.container{
-  max-width: 1080px;
-  margin: 20px auto;
-}
+.container { max-width: 960px; margin: 0 auto; padding: 48px 24px 24px; }
+.page-header { margin-bottom: 30px; }
+.eyebrow { color: #6c528f; font-size: 12px; font-weight: 700; letter-spacing: 2px; margin-bottom: 16px; }
+h1 { font-size: clamp(30px, 5vw, 44px); letter-spacing: -1.5px; margin-bottom: 12px; }
+.page-header > p:last-child { color: #645d71; line-height: 1.6; }
+.search-label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 9px; }
+.city-select__control { min-height: 50px !important; border-radius: 10px !important; border-color: #c8c1d5 !important; }
+.city-select__menu { z-index: 5 !important; }
+.search-error { color: #922c3c; margin: 12px 0 0; font-size: 14px; }
+.notice { padding: 15px 18px; border-radius: 10px; margin: 22px 0 0; background: #e9e3f4; line-height: 1.5; }
+.notice p { margin-bottom: 12px; }
+.error { background: #fbe8ec; color: #762534; }
+.warning { background: #fff0ce; color: #684919; }
+.demo { background: #e6eef8; color: #324d70; font-size: 14px; }
+.notice button { background: #47335f; color: #fff; border: 0; border-radius: 7px; padding: 9px 15px; }
+.empty-state { text-align: center; margin: 65px auto; color: #6a6178; }
+.empty-state h2 { color: #413451; font-size: 23px; margin-top: 12px; }
+.updated { margin: 12px 0 28px; color: #6a6178; font-size: 12px; }
+footer { margin-top: 35px; padding-top: 20px; border-top: 1px solid #ded8e7; color: #72697d; font-size: 12px; }
+@media (max-width: 540px) { .container { padding: 30px 16px 20px; } }

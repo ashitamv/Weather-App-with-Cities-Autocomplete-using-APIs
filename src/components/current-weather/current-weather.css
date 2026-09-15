@@ -1,78 +1,12 @@
-.weather {
-    width: 300px;
-    border-radius: 6px;
-    /* box-shadow: 4px 5px 5px 2px rgba(93, 77, 127, 0.584); */
-    color: #fff;
-    background-color: #47385d;
-    margin: 30px auto auto;
-    padding: 0 20px 20px 20px;
-}
-
-.top,
-.bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.city {
-    font-weight: 600;
-    font-size: 23px;
-    line-height: 1;
-    margin: 0;
-    letter-spacing: 0.2px;
-}
-
-.weather-description {
-    font-weight: 450;
-    font-size: 17px;
-    line-height: 2;
-    margin: 0;
-}
-
-.weather-icon {
-    width: 100px;
-}
-
-.temperature {
-    font-weight: 600;
-    font-size: 70px;
-    width: auto;
-    letter-spacing: 1px;
-    margin: 10px 0px;
-    /* text-align: left; */
-    /* padding: -30px -30px -30px -30px; */
-}
-
-.details {
-    width: 100%;
-    padding-left: 30px;
-}
-
-.parameter-row {
-    display: flex;
-    justify-content: space-between;
-}
-
-.parameter-label {
-    text-align: left;
-    font-weight: 400;
-    font-size: 12px;
-}
-
-.parameter-label-title {
-    align-items: center;
-    font-weight: 500;
-    font-size: 18px;
-    padding : 30px -5px;
-}
-
-.parameter-value {
-    text-align: right;
-    font-weight: 600;
-    font-size: 12px;
-}
-
-.parameter-label.top {
-    border-bottom: 1px solid #fff;
-}
+.weather { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; background: #47355d; color: #fff; border-radius: 18px; padding: 30px; margin-top: 24px; }
+.weather-caption { font-size: 11px; letter-spacing: 1.5px; color: #d5cbe3; margin-bottom: 14px; }
+.city { font-weight: 600; font-size: 25px; margin: 0 0 6px; }
+.weather-description { font-size: 15px; color: #e5dced; margin: 0; text-transform: capitalize; }
+.temperature-row { display: flex; align-items: center; gap: 10px; }
+.temperature { font-weight: 600; font-size: 74px; letter-spacing: -3px; margin: 12px 0 0; }
+.temperature > span { font-size: 30px; letter-spacing: -1px; vertical-align: super; }
+.weather-icon { width: 95px; height: 95px; }
+.details { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; align-content: center; margin: 0; border-left: 1px solid #6b587e; padding-left: 30px; }
+.details dt { color: #d5cbe3; font-size: 12px; margin-bottom: 8px; }
+.details dd { margin: 0; font-weight: 600; font-size: 19px; }
+@media (max-width: 600px) { .weather { grid-template-columns: 1fr; padding: 25px; gap: 22px; } .details { border-left: none; border-top: 1px solid #6b587e; padding: 22px 0 0; } }

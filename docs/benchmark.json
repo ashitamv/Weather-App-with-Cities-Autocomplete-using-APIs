@@ -1,0 +1,43 @@
+{
+  "measuredAt": "2026-09-15T14:14:23.857Z",
+  "node": "v24.19.0",
+  "environment": "linux/x64, loopback HTTP, synthetic provider with 50 ms delay per call",
+  "scope": "30 requests for one location per scenario. No real provider, internet latency, production traffic, or distributed cache.",
+  "results": [
+    {
+      "name": "No cache, sequential requests",
+      "requests": 30,
+      "concurrency": 1,
+      "upstreamCalls": 60,
+      "cacheStatuses": {
+        "miss": 30
+      },
+      "medianMs": 56.73,
+      "p95Ms": 68.25
+    },
+    {
+      "name": "Cache enabled, sequential requests",
+      "requests": 30,
+      "concurrency": 1,
+      "upstreamCalls": 2,
+      "cacheStatuses": {
+        "miss": 1,
+        "hit": 29
+      },
+      "medianMs": 2.62,
+      "p95Ms": 11.61
+    },
+    {
+      "name": "Cache enabled, concurrent cold start",
+      "requests": 30,
+      "concurrency": 30,
+      "upstreamCalls": 2,
+      "cacheStatuses": {
+        "miss": 1,
+        "coalesced": 29
+      },
+      "medianMs": 95.33,
+      "p95Ms": 117.41
+    }
+  ]
+}
